@@ -1,0 +1,529 @@
+/* BASIC RESET & FONT SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fcfcfc;
+}
+
+h1, h2, h3, .logo-text {
+    font-family: 'Playfair Display', serif;
+    color: #4B0000; /* Dark Maroon/Elegant tone */
+}
+
+/* === TOP BANNER & HEADER STYLES === */
+
+
+/* === TOP BANNER BASE STYLES (Keep these, adjust as needed) === */
+.top-banner {
+    background-color: #940e0e; /* Example background color */
+    color: white;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    overflow: hidden; /* Crucial: Hides text when it scrolls out of the container */
+    white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+
+
+/* === MARQUEE/SCROLLING TEXT STYLES === */
+.scrolling-text {
+    /* Allows the scrolling text to take available space */
+    flex-grow: 1; 
+    /* The text should be positioned off-screen to start the animation */
+    transform: translateX(100%); 
+    /* Apply the animation: name, duration, timing, repetition */
+    animation: marquee 15s linear infinite; 
+    padding-right: 20px; /* Add some space between the text repetitions */
+    margin: 0; /* Remove default paragraph margin */
+}
+
+/* === KEYFRAMES DEFINITION === */
+/* This is where the movement is defined */
+@keyframes marquee {
+    0% {
+        /* Start position: 100% of the container width (off-screen right) */
+        transform: translateX(100%);
+    }
+    100% {
+        /* End position: -100% of the element's width (off-screen left) */
+        /* Note: For continuous flow, this should move past the end */
+        transform: translateX(-100%); 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo-text {
+    font-size: 2em;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.logo-subtext {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    color: #DAA520; /* Gold/Yellowish accent */
+    margin-top: -5px;
+}
+
+.site-logo{
+    width: 90px;      /* yahan se size control hoga */
+    height: auto;
+    display: block;
+    margin: 10px auto; /* center align */
+}
+
+
+
+
+
+
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: #DAA520;
+}
+
+.utility-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-btn, .cart-btn, .contact-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #4B0000;
+}
+
+/* === HERO SECTION STYLES === */
+.hero-section {
+    padding: 80px 5%;
+    text-align: center;
+    /* Removed background-color: #FDF5E6; */
+    background-image: url('Images/web banner.webp'); /* Your background image */
+    background-size: cover; /* **This makes the image cover the entire section without blurring** */
+    background-position: center;
+    background-repeat: no-repeat; /* Ensure it doesn't repeat */
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    /* Changed the background color to be more transparent to show the image */
+    background-color: rgba(255, 255, 255, 0.75); /* White overlay, now 75% opaque */
+    padding: 30px;
+    border-radius: 8px;
+    max-width:750px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for contrast */
+}
+
+.hero-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333; /* Ensure text is dark and readable */
+}
+
+.hero-description {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #555; /* Ensure text is dark and readable */
+}
+
+/* Optional: Add media query for responsiveness */
+@media (max-width: 600px) {
+    .hero-section {
+        min-height: 300px;
+        padding: 40px 5%;
+    }
+}
+
+/* === PRODUCTS GRID STYLES === */
+.products-listing {
+    padding: 50px 5%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.product-grid {
+    display: grid;
+    /* Desktop view: 3 columns (standard e-commerce) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px; /* Consistent height for product images */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    /* Image background ko professional banane ke liye: */
+    background-color: #f7f7f7; 
+}
+
+.product-name {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+.product-category {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #DAA520;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    background-color: #4B0000;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #6E0000;
+}
+
+/* === WHATSAPP MODAL STYLES === */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1001; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.6); 
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; 
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.whatsapp-number {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #25D366;
+    margin: 15px 0;
+}
+
+.whatsapp-link {
+    display: inline-block;
+    background-color: #25D366; 
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-link:hover {
+    background-color: #128C7E;
+}
+
+/* === FOOTER STYLES === */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 5% 10px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #555;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-block {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.footer-block h4 {
+    color: #DAA520;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-block ul {
+    list-style: none;
+}
+
+.footer-block ul li a {
+    color: #ccc;
+    text-decoration: none;
+    line-height: 1.8;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.made-by {
+    font-size: 0.7em;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* === RESPONSIVENESS (Media Queries) === */
+/* Tablet view */
+@media screen and (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-block {
+        width: 45%;
+    }
+}
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+    }
+    
+    .logo-container, .main-nav, .utility-bar {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .main-nav ul {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .utility-bar {
+        justify-content: center;
+        padding-top: 10px;
+    }
+
+    .top-banner {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-block {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* CATEGORY POPUP STYLES */
+.category-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.popup-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border-top: 6px solid #4B0000;
+}
+
+.popup-list {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.popup-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.popup-list li a {
+    text-decoration: none;
+    color: #4B0000;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: block;
+}
+
+.popup-list li:hover { background: #fdf5e6; }
+
+.close-popup {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ABOUT SECTION */
+.about-section { padding: 60px 5%; background-color: #f9f9f9; text-align: center; }
+.about-card { max-width: 800px; margin: 0 auto; line-height: 2; }
+.whatsapp-btn-main { background: #25D366; color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; margin-top: 20px; font-weight: bold; }
+
+/* FEEDBACK SLIDER */
+.feedback-section { padding: 60px 5%; text-align: center; background: #fff; }
+.slider-container { max-width: 600px; margin: 0 auto; position: relative; min-height: 150px; }
+.slide { display: none; padding: 20px; font-style: italic; color: #555; }
+.fade { animation: fadeEffect 1.5s; }
+@keyframes fadeEffect { from {opacity: .4} to {opacity: 1} }
+
+/* FEEDBACK IMAGE STYLES */
+.feedback-img {
+    width: 100%;
+    max-width: 350px; /* Adjust this based on how large you want the screenshots */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 4px solid #fff;
+    margin: 0 auto;
+    display: block;
+}
+
+.slider-container {
+    padding-bottom: 30px;
+}
+
+/* Ensure the slider looks good on mobile */
+@media (max-width: 600px) {
+    .feedback-img {
+        max-width: 280px;
+    }
+}
+
+
+.category-block {
+    margin-bottom: 60px; /* Space between different categories */
+    padding-top: 20px;
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    color: #4B0000;
+    font-size: 2em;
+    border-left: 5px solid #DAA520; /* Gold accent on the left */
+    padding-left: 15px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+
+
